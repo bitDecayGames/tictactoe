@@ -1,8 +1,8 @@
-package com.bytebreak.tictactoe.action;
+package com.bitdecay.tictactoe.action;
 
 import com.bitdecay.board.Action;
 import com.bitdecay.board.utils.GameBoardException;
-import com.bytebreak.tictactoe.State;
+import com.bitdecay.tictactoe.State;
 
 public class PlayAction extends Action<State> {
     private static final String[] validKeys = new String[]{"q", "w", "e", "a", "s", "d", "z", "x", "c"};

@@ -1,16 +1,16 @@
-package com.bytebreak.tictactoe;
+package com.bitdecay.tictactoe;
 
 import com.bitdecay.board.Conditions;
 import com.bitdecay.board.GameBoard;
 import com.bitdecay.board.Rules;
 import com.bitdecay.board.utils.GameBoardException;
-import com.bytebreak.tictactoe.action.ChangeTurnAction;
-import com.bytebreak.tictactoe.action.PlayAction;
-import com.bytebreak.tictactoe.condition.TieCondition;
-import com.bytebreak.tictactoe.condition.WinCondition;
-import com.bytebreak.tictactoe.rule.CannotOverwritePreviousPlaysRule;
-import com.bytebreak.tictactoe.rule.CannotPlayTwiceInARowRule;
-import com.bytebreak.tictactoe.rule.TurnMustAlternateRule;
+import com.bitdecay.tictactoe.action.ChangeTurnAction;
+import com.bitdecay.tictactoe.action.PlayAction;
+import com.bitdecay.tictactoe.condition.TieCondition;
+import com.bitdecay.tictactoe.condition.WinCondition;
+import com.bitdecay.tictactoe.rule.CannotOverwritePreviousPlaysRule;
+import com.bitdecay.tictactoe.rule.TurnMustAlternateRule;
+import com.bitdecay.tictactoe.rule.CannotPlayTwiceInARowRule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +22,14 @@ public class Main {
         int turns = 0;
         State currentState = gameBoard.currentState();
         System.out.println(currentState);
+        System.out.println("\n");
         while(!currentState.finished && turns <= 9){
             gameBoard.submitAction(new PlayAction(pickRandomKey(currentState), currentState.lastPlayer * -1));
             gameBoard.submitAction(new ChangeTurnAction());
             gameBoard.step();
             currentState = gameBoard.currentState();
             System.out.println(currentState);
+            System.out.println("\n");
             turns++;
         }
         if (turns > 9) throw new GameBoardException("There shouldn't have been more than 9 turns");
@@ -35,7 +37,7 @@ public class Main {
         else System.out.println("Cats game!");
     }
 
-    public static String pickRandomKey(State currentState){
+    static String pickRandomKey(State currentState){
         List<String> validKeys = new ArrayList<>();
         if (currentState.q == 0) validKeys.add("q");
         if (currentState.w == 0) validKeys.add("w");

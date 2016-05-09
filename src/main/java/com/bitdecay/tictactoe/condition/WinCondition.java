@@ -1,8 +1,8 @@
-package com.bytebreak.tictactoe.condition;
+package com.bitdecay.tictactoe.condition;
 
 import com.bitdecay.board.Condition;
-import com.bytebreak.tictactoe.State;
-import com.bytebreak.tictactoe.action.WinAction;
+import com.bitdecay.tictactoe.State;
+import com.bitdecay.tictactoe.action.WinAction;
 
 public class WinCondition extends Condition<State, WinAction> {
     public WinCondition(){

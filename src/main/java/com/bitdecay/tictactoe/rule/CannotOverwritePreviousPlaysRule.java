@@ -1,8 +1,8 @@
-package com.bytebreak.tictactoe.rule;
+package com.bitdecay.tictactoe.rule;
 
 import com.bitdecay.board.Action;
 import com.bitdecay.board.Rule;
-import com.bytebreak.tictactoe.State;
+import com.bitdecay.tictactoe.State;
 
 public class CannotOverwritePreviousPlaysRule implements Rule<State> {
     @Override

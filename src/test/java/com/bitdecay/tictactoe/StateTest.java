@@ -1,4 +1,5 @@
-import com.bytebreak.tictactoe.State;
+package com.bitdecay.tictactoe;
+
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.bytebreak.tictactoe;
+package com.bitdecay.tictactoe;
 
 import com.bitdecay.board.GameBoardState;
 import com.bitdecay.board.utils.GameBoardException;
@@ -41,12 +41,18 @@ public class State implements GameBoardState {
     @Override
     public String serialize() {
         StringBuilder sb = new StringBuilder();
+        sb.append(boardToString()).append("\n\n");
+        sb.append(print(winner)).append(", ").append(xTurn).append(", ").append(finished).append(", ").append(print(lastPlayer));
+        return sb.toString();
+    }
+
+    private String boardToString(){
+        StringBuilder sb = new StringBuilder();
         sb.append(print(q)).append("|").append(print(w)).append("|").append(print(e)).append("\n");
         sb.append("-----").append("\n");
         sb.append(print(a)).append("|").append(print(s)).append("|").append(print(d)).append("\n");
         sb.append("-----").append("\n");
-        sb.append(print(z)).append("|").append(print(x)).append("|").append(print(c)).append("\n\n");
-        sb.append(print(winner)).append(", ").append(xTurn).append(", ").append(finished).append(", ").append(print(lastPlayer));
+        sb.append(print(z)).append("|").append(print(x)).append("|").append(print(c));
         return sb.toString();
     }
 
@@ -87,14 +93,12 @@ public class State implements GameBoardState {
     public int midCol(){
         return a + s + d;
     }
-    public int rightCol(){
-        return e + d + c;
-    }
+    public int rightCol(){ return e + d + c; }
     public int leftDiag(){
         return q + s + c;
     }
     public int rightDiag(){
-        return q + s + c;
+        return e + s + z;
     }
 
     @Override
@@ -108,6 +112,6 @@ public class State implements GameBoardState {
 
     @Override
     public String toString() {
-        return serialize();
+        return boardToString();
     }
 }

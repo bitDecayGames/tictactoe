@@ -1,25 +1,21 @@
-package com.bytebreak.tictactoe.action;
+package com.bitdecay.tictactoe.action;
 
 
 import com.bitdecay.board.Action;
-import com.bytebreak.tictactoe.State;
+import com.bitdecay.tictactoe.State;
 
-public class TieAction extends Action<State> {
+public class ChangeTurnAction extends Action<State> {
 
     @Override
     protected State innerApply(State state) {
         State next = (State) state.clone();
-        next.winner = 0;
-        next.finished = true;
+        next.xTurn = !next.xTurn;
         return next;
     }
 
     @Override
     protected State innerUnapply(State state) {
-        State next = (State) state.clone();
-        next.winner = 0;
-        next.finished = false;
-        return next;
+        return innerApply(state);
     }
 
     @Override

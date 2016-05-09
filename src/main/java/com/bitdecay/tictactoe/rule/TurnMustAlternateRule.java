@@ -1,14 +1,14 @@
-package com.bytebreak.tictactoe.rule;
+package com.bitdecay.tictactoe.rule;
 
 import com.bitdecay.board.Action;
 import com.bitdecay.board.Rule;
-import com.bytebreak.tictactoe.State;
-import com.bytebreak.tictactoe.action.PlayAction;
+import com.bitdecay.tictactoe.State;
+import com.bitdecay.tictactoe.action.ChangeTurnAction;
 
-public class CannotPlayTwiceInARowRule implements Rule<State> {
+public class TurnMustAlternateRule implements Rule<State> {
     @Override
     public boolean apply(State current, State next, Action action) {
-        if (action instanceof PlayAction) return current.lastPlayer != next.lastPlayer;
+        if (action instanceof ChangeTurnAction) return current.xTurn != next.xTurn;
         return true;
     }
 

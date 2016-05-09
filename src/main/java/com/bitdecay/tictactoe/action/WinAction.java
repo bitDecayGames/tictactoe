@@ -1,9 +1,9 @@
-package com.bytebreak.tictactoe.action;
+package com.bitdecay.tictactoe.action;
 
 
 import com.bitdecay.board.Action;
 import com.bitdecay.board.utils.GameBoardException;
-import com.bytebreak.tictactoe.State;
+import com.bitdecay.tictactoe.State;
 
 public class WinAction extends Action<State> {
     private int side = 0;
