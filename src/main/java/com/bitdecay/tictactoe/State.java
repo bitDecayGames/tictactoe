@@ -75,7 +75,7 @@ public class State implements GameBoardState {
         this.xTurn = readBoolean(results[1]);
         this.finished = readBoolean(results[2]);
         this.lastPlayer = read(results[3]);
-        return null;
+        return this;
     }
 
     public int topRow(){
