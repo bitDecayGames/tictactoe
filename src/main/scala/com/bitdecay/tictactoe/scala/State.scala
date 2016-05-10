@@ -55,6 +55,8 @@ case class State(q:Int=0,
   lazy val rightDiag = e + s + z
 
   override lazy val toString = boardToString
+
+  override lazy val clone:Object = copy()
 }
 
 object State {
