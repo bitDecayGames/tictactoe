@@ -73,7 +73,7 @@
             <version>2.11.8</version>
         </dependency>
         <dependency>
-            <groupId>com.bitdecay</groupId>
+            <groupId>com.bytebreakstudios</groupId>
             <artifactId>board</artifactId>
             <version>0.0.1</version>
         </dependency>
